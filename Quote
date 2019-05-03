@@ -1,0 +1,49 @@
+import java.util.Date;
+
+public class Quote  {
+    private final String text;
+    private int likes;
+    private int dislikes;
+    private Date time;
+
+    public Quote(String text){
+        if (text.isEmpty()) {
+            throw new IllegalArgumentException(
+                    "Quote is empty ");
+        }
+        this.text=text;
+        likes=0;
+        dislikes=0;
+        time = new Date();
+    }
+
+    public void addLike(){
+        likes++;
+    }
+    public void addDislike(){
+        dislikes++;
+    }
+
+    public int getDislikes() {
+        return dislikes;
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public String getText() {
+        return text;
+    }
+@Override
+    public String toString() {
+        return '\n'+"---------------"+'\n'+"Quote: " + text +'\n'+"Likes: " + likes + '\n'+"Dislikes: " + dislikes+'\n'+time+'\n'+"---------------"+'\n' ;
+    }
+
+
+
+}
